@@ -159,9 +159,9 @@ const Sections = ({ activeSection }) => {
                             <p style={{ color: 'var(--accent-teal)', fontWeight: 900, fontSize: '2.5rem', marginBottom: '2rem' }}>연간 400,000원</p>
                             <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', marginBottom: '3rem' }}>
                                 <li style={{ display: 'flex', gap: '1rem', fontSize: '1.1rem' }}><CheckCircle size={22} color="var(--accent-teal)" /> <strong>Plan R 모든 혜택 포함</strong></li>
-                                <li style={{ display: 'flex', gap: '1rem', fontSize: '1.1rem' }}><CheckCircle size={22} color="var(--accent-teal)" /> 유니온 X(오프라인용) 20% 추가 상담 할인</li>
-                                <li style={{ display: 'flex', gap: '1rem', fontSize: '1.1rem' }}><CheckCircle size={22} color="var(--accent-teal)" /> <strong>HWP 원본 파일 추가 제공</strong></li>
-                                <li style={{ display: 'flex', gap: '1rem', fontSize: '1.1rem' }}><CheckCircle size={22} color="var(--accent-teal)" /> 학원 전용 고사실 관리 시스템 이용</li>
+                                <li style={{ display: 'flex', gap: '1rem', fontSize: '1.1rem' }}><CheckCircle size={22} color="var(--accent-teal)" /> 유니온 X(오프라인용) 20% 상시 할인</li>
+                                <li style={{ display: 'flex', gap: '1rem', fontSize: '1.1rem' }}><CheckCircle size={22} color="var(--accent-teal)" /> 추가 제공 : X 교사용 PDF, X PPT 자료</li>
+                                <li style={{ display: 'flex', gap: '1rem', fontSize: '1.1rem', color: 'var(--accent-teal)' }}><CheckCircle size={22} color="var(--accent-teal)" /> <strong>미공개 모의고사(공통1회) 추가 제공 (hwp예정) ★★</strong></li>
                             </ul>
                         </div>
                     </div>
