@@ -139,7 +139,7 @@ body::before {
   padding: 1.2rem 1.8rem;
   width: 100%;
   border-radius: 14px;
-  color: var(--text-secondary);
+  color: #ffffff;
   font-weight: 700;
   font-size: 1rem;
   transition: var(--transition);
@@ -150,15 +150,17 @@ body::before {
 }
 
 .nav-item:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateX(5px);
 }
 
 .nav-item.active {
   color: var(--accent-teal);
-  background: rgba(0, 242, 254, 0.08);
-  border-color: rgba(0, 242, 254, 0.25);
-  box-shadow: 0 0 20px rgba(0, 242, 254, 0.1);
+  background: rgba(0, 242, 254, 0.1);
+  border-color: rgba(0, 242, 254, 0.3);
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.15);
+  font-weight: 900;
 }
 
 .divider {

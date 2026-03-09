@@ -35,6 +35,7 @@ const Sidebar = ({ activeSection, onSectionChange }) => {
       items: [
         { id: 'check', label: '주문번호 조회', icon: <Search size={16} /> },
         { id: 'faq', label: 'FAQ', icon: <HelpCircle size={16} /> },
+        { id: 'kakao', label: '채널 연결', icon: <MessageSquare size={16} /> },
       ]
     }
   ];
@@ -54,27 +55,42 @@ const Sidebar = ({ activeSection, onSectionChange }) => {
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.15rem' }}>
               {group.items.map((item) => (
                 <li key={item.id}>
-                  {item.id === 'apply' ? (
+                  {item.id === 'apply' || item.id === 'kakao' ? (
                     <a
-                      href="https://docs.google.com/forms/d/15g5yDT4Pykee3rdjXOX1J234vGt9PVgbnV2ze4EH1M4/viewform"
+                      href={item.id === 'apply' ? "https://docs.google.com/forms/d/15g5yDT4Pykee3rdjXOX1J234vGt9PVgbnV2ze4EH1M4/viewform" : "https://pf.kakao.com/_pqQCn"}
                       target="_blank"
                       rel="noreferrer"
                       className="nav-item"
-                      style={{ padding: '0.65rem 1rem', gap: '0.8rem', textDecoration: 'none' }}
+                      style={{
+                        padding: '0.8rem 1.2rem',
+                        gap: '0.8rem',
+                        textDecoration: 'none',
+                        color: '#ffffff',
+                        fontSize: '1rem',
+                        fontWeight: 700,
+                        transition: 'all 0.2s'
+                      }}
                     >
-                      {React.cloneElement(item.icon, { size: 16 })}
-                      <span style={{ fontSize: '0.85rem' }}>{item.label}</span>
-                      <ExternalLink size={12} style={{ marginLeft: 'auto', opacity: 0.6 }} />
+                      {React.cloneElement(item.icon, { size: 18, color: '#ffffff' })}
+                      <span>{item.label}</span>
+                      <ExternalLink size={14} style={{ marginLeft: 'auto', opacity: 0.6 }} />
                     </a>
                   ) : (
                     <button
                       className={`nav-item ${activeSection === item.id ? 'active' : ''}`}
                       onClick={() => onSectionChange(item.id)}
-                      style={{ padding: '0.65rem 1rem', gap: '0.8rem' }}
+                      style={{
+                        padding: '0.8rem 1.2rem',
+                        gap: '0.8rem',
+                        color: activeSection === item.id ? 'var(--accent-teal)' : '#ffffff',
+                        fontSize: '1rem',
+                        fontWeight: activeSection === item.id ? 900 : 700,
+                        transition: 'all 0.2s'
+                      }}
                     >
-                      {React.cloneElement(item.icon, { size: 16 })}
-                      <span style={{ fontSize: '0.85rem' }}>{item.label}</span>
-                      {activeSection === item.id && <ChevronRight size={12} style={{ marginLeft: 'auto', opacity: 0.6 }} />}
+                      {React.cloneElement(item.icon, { size: 18, color: activeSection === item.id ? 'var(--accent-teal)' : '#ffffff' })}
+                      <span>{item.label}</span>
+                      {activeSection === item.id && <ChevronRight size={14} style={{ marginLeft: 'auto', opacity: 0.6 }} />}
                     </button>
                   )}
                 </li>
