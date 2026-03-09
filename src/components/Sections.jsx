@@ -179,7 +179,7 @@ const Sections = ({ activeSection }) => {
                             가입 확인 후 즉시 할인 주문이 가능하며, 카카오 채널을 통한 1:1 밀착 상담을 지원합니다.
                         </p>
                         <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                            <a href="https://union-ordercenter.vercel.app/" target="_blank" rel="noreferrer" className="nav-item active" style={{ width: 'auto', padding: '1.8rem 4rem', fontSize: '1.2rem', borderRadius: '50px', boxShadow: '0 0 30px rgba(0,242,254,0.2)' }}>
+                            <a href="https://union-ordercenter.vercel.app/membership" target="_blank" rel="noreferrer" className="nav-item active" style={{ width: 'auto', padding: '1.8rem 4rem', fontSize: '1.2rem', borderRadius: '50px', boxShadow: '0 0 30px rgba(0,242,254,0.2)' }}>
                                 바로 주문하기 <ArrowRight size={22} style={{ marginLeft: '10px' }} />
                             </a>
                             <a href="https://pf.kakao.com/_pqQCn" target="_blank" rel="noreferrer" className="nav-item" style={{ width: 'auto', padding: '1.8rem 4rem', fontSize: '1.2rem', borderRadius: '50px', border: '1px solid var(--border-glass)' }}>
