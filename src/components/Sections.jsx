@@ -1,7 +1,9 @@
-import React from 'react';
-import { ExternalLink, CheckCircle, ArrowRight, Search, HelpCircle, MessageSquare, Calendar, ChevronRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { ExternalLink, CheckCircle, ArrowRight, Search, HelpCircle, MessageSquare, Calendar, ChevronRight, X, Info } from 'lucide-react';
 
 const Sections = ({ activeSection }) => {
+    const [selectedImage, setSelectedImage] = useState(null);
+
     const sections = {
         intro: (
             <section className="section">
@@ -22,9 +24,12 @@ const Sections = ({ activeSection }) => {
                                 <h2 style={{ fontSize: '1.8rem', fontWeight: 900, color: '#fff', margin: 0 }}>UNION R</h2>
                                 <span style={{ background: '#7c4dff', padding: '4px 12px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 800 }}>ONLINE</span>
                             </div>
-                            <div style={{ position: 'relative' }}>
+                            <div style={{ position: 'relative', cursor: 'zoom-in' }} onClick={() => setSelectedImage('/images/union_r_intro_1.png')}>
                                 <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', background: 'radial-gradient(circle, rgba(124, 77, 255, 0.08) 0%, transparent 70%)', zIndex: -1 }}></div>
                                 <img src="/images/union_r_intro_1.png" alt="UNION R" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 25px rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.05)' }} />
+                                <div className="zoom-hint" style={{ position: 'absolute', bottom: '1rem', right: '1rem', background: 'rgba(0,0,0,0.5)', padding: '0.4rem', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                    <Search size={16} color="#fff" />
+                                </div>
                             </div>
                         </div>
 
@@ -34,9 +39,12 @@ const Sections = ({ activeSection }) => {
                                 <h2 style={{ fontSize: '1.8rem', fontWeight: 900, color: '#fff', margin: 0 }}>UNION X</h2>
                                 <span style={{ background: '#ff4d4d', padding: '4px 12px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 800 }}>ACADEMY</span>
                             </div>
-                            <div style={{ position: 'relative' }}>
+                            <div style={{ position: 'relative', cursor: 'zoom-in' }} onClick={() => setSelectedImage('/images/union_r_intro_2.png')}>
                                 <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', background: 'radial-gradient(circle, rgba(79, 172, 254, 0.08) 0%, transparent 70%)', zIndex: -1 }}></div>
                                 <img src="/images/union_r_intro_2.png" alt="UNION X" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 25px rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.05)' }} />
+                                <div className="zoom-hint" style={{ position: 'absolute', bottom: '1rem', right: '1rem', background: 'rgba(0,0,0,0.5)', padding: '0.4rem', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                    <Search size={16} color="#fff" />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -142,6 +150,13 @@ const Sections = ({ activeSection }) => {
                 <div className="container">
                     <h2 className="section-title">2027 연간 멤버십</h2>
                     <p className="section-subtitle">연간 혜택을 통해 가장 합리적이고 압도적인 성취를 경험하세요.</p>
+
+                    <div className="benefit-notice-container">
+                        <div className="benefit-notice">
+                            <Info size={18} />
+                            연간 총 30부 이상 구매 시 멤버십 가입이 더욱 합리적입니다.
+                        </div>
+                    </div>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '3rem' }}>
                         <div className="info-card" style={{ borderTop: '4px solid var(--accent-purple)' }}>
                             <div className="saving-badge" style={{ background: 'rgba(124, 77, 255, 0.15)', color: '#b794ff' }}>FOR INDIVIDUAL</div>
@@ -231,7 +246,39 @@ const Sections = ({ activeSection }) => {
         )
     };
 
-    return sections[activeSection] || sections.intro;
+    return (
+        <>
+            {sections[activeSection] || sections.intro}
+
+            {/* Image Zoom Modal */}
+            {selectedImage && (
+                <div className="modal-overlay" onClick={() => setSelectedImage(null)}>
+                    <div className="modal-content" onClick={e => e.stopPropagation()}>
+                        <img src={selectedImage} alt="Enlarged introduction" className="modal-img" />
+                        <button
+                            onClick={() => setSelectedImage(null)}
+                            style={{
+                                position: 'absolute',
+                                top: '-40px',
+                                right: '0',
+                                background: 'none',
+                                border: 'none',
+                                color: '#fff',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.5rem',
+                                opacity: 0.8,
+                                fontWeight: 600
+                            }}
+                        >
+                            <X size={24} /> 닫기
+                        </button>
+                    </div>
+                </div>
+            )}
+        </>
+    );
 };
 
 export default Sections;
