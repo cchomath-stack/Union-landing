@@ -12,7 +12,7 @@ import {
   Calendar
 } from 'lucide-react';
 
-const Sidebar = ({ activeSection, onSectionChange }) => {
+const Sidebar = ({ activeSection, onSectionChange, isOpen }) => {
   const menuGroups = [
     {
       group: 'PROJECT',
@@ -41,7 +41,7 @@ const Sidebar = ({ activeSection, onSectionChange }) => {
   ];
 
   return (
-    <div className="sidebar" style={{ display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden', backgroundColor: 'rgba(5, 5, 10, 0.98)' }}>
+    <div className={`sidebar ${isOpen ? 'mobile-open' : ''}`} style={{ display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden', backgroundColor: 'rgba(5, 5, 10, 0.98)' }}>
       <div className="sidebar-logo" style={{ padding: '1.5rem 1.5rem 1rem 1.5rem', display: 'flex', flexDirection: 'column' }}>
         <img src="/images/logo.png" alt="UNION Logo" style={{ width: '120px', height: 'auto', display: 'block' }} />
       </div>
@@ -92,7 +92,8 @@ const Sidebar = ({ activeSection, onSectionChange }) => {
                       <span>{item.label}</span>
                       {activeSection === item.id && <ChevronRight size={14} style={{ marginLeft: 'auto', opacity: 0.6 }} />}
                     </button>
-                  )}
+                  )
+                  }
                 </li>
               ))}
             </ul>
