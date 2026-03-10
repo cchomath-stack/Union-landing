@@ -273,12 +273,6 @@
     padding: 2rem 0.5rem;
   }
 
-  .sidebar-logo,
-  .nav-item span,
-  .footer-link span {
-    display: none;
-  }
-
   .main-content {
     margin-left: 60px;
   }
