@@ -24,9 +24,9 @@ const Sections = ({ activeSection }) => {
                                 <h2 style={{ fontSize: '1.8rem', fontWeight: 900, color: '#fff', margin: 0 }}>UNION R</h2>
                                 <span style={{ background: '#7c4dff', padding: '4px 12px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 800 }}>ONLINE</span>
                             </div>
-                            <div style={{ position: 'relative', cursor: 'zoom-in' }} onClick={() => setSelectedImage('/images/union_r_intro_1.png')}>
+                            <div style={{ position: 'relative', cursor: 'zoom-in' }} onClick={() => setSelectedImage('/images/2027학년도 UNION 모의고사 팜플렛_F_2.jpg')}>
                                 <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', background: 'radial-gradient(circle, rgba(124, 77, 255, 0.08) 0%, transparent 70%)', zIndex: -1 }}></div>
-                                <img src="/images/union_r_intro_1.png" alt="UNION R" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 25px rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.05)' }} />
+                                <img src="/images/2027학년도 UNION 모의고사 팜플렛_F_2.jpg" alt="UNION R" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 25px rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.05)' }} />
                                 <div className="zoom-hint" style={{ position: 'absolute', bottom: '1rem', right: '1rem', background: 'rgba(0,0,0,0.5)', padding: '0.4rem', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                     <Search size={16} color="#fff" />
                                 </div>
@@ -39,9 +39,9 @@ const Sections = ({ activeSection }) => {
                                 <h2 style={{ fontSize: '1.8rem', fontWeight: 900, color: '#fff', margin: 0 }}>UNION X</h2>
                                 <span style={{ background: '#ff4d4d', padding: '4px 12px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 800 }}>ACADEMY</span>
                             </div>
-                            <div style={{ position: 'relative', cursor: 'zoom-in' }} onClick={() => setSelectedImage('/images/union_r_intro_2.png')}>
+                            <div style={{ position: 'relative', cursor: 'zoom-in' }} onClick={() => setSelectedImage('/images/2027학년도 UNION 모의고사 팜플렛_F_4.jpg')}>
                                 <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', background: 'radial-gradient(circle, rgba(79, 172, 254, 0.08) 0%, transparent 70%)', zIndex: -1 }}></div>
-                                <img src="/images/union_r_intro_2.png" alt="UNION X" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 25px rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.05)' }} />
+                                <img src="/images/2027학년도 UNION 모의고사 팜플렛_F_4.jpg" alt="UNION X" style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 25px rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.05)' }} />
                                 <div className="zoom-hint" style={{ position: 'absolute', bottom: '1rem', right: '1rem', background: 'rgba(0,0,0,0.5)', padding: '0.4rem', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                     <Search size={16} color="#fff" />
                                 </div>
