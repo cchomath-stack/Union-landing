@@ -308,15 +308,22 @@ const Sections = ({ activeSection, isMobile }) => {
                     </div>
                 </section>
             ),
-            order: (
+            check: (
                 <section className="section">
-                    <div className="container text-center">
-                        <h2 className="section-title">ORDER SYSTEM</h2>
-                        <p className="section-subtitle">멤버십 전용 통합 주문창</p>
-                        <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center', gap: '1.5rem' }}>
-                            <a href="https://union-ordercenter.vercel.app/membership" target="_blank" rel="noreferrer" className="nav-item active" style={{ width: 'auto', padding: '1rem 2.5rem' }}>
-                                바로 주문하기 <ArrowRight size={20} />
-                            </a>
+                    <div className="container">
+                        <h2 className="section-title">INTEGRATED DASHBOARD</h2>
+                        <p className="section-subtitle">주문번호 하나로 모든 배송 현황을 실시간으로 확인하세요.</p>
+                        <div className="info-card" style={{ padding: '4rem' }}>
+                            <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
+                                <h3 style={{ fontSize: '2.2rem', marginBottom: '1.5rem' }}>CSM17 Order Center</h3>
+                                <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', marginBottom: '3rem', lineHeight: '1.8' }}>
+                                    발급받으신 주문번호(UNR/UNX/YAK)를 입력하시면<br />
+                                    별도의 로그인 없이 즉시 상세 정보를 조회하실 수 있습니다.
+                                </p>
+                                <a href="https://union-ordercenter.vercel.app" target="_blank" rel="noreferrer" className="nav-item active" style={{ width: 'fit-content', padding: '1.2rem 3rem', borderRadius: '50px', margin: '0 auto' }}>
+                                    주문번호 통합 조회 <Search size={20} style={{ marginLeft: '8px' }} />
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -364,7 +371,7 @@ const Sections = ({ activeSection, isMobile }) => {
             )
         };
         
-        if (activeSection === 'check' || activeSection === 'kakao') return sections.faq;
+        if (activeSection === 'kakao') return sections.faq;
         return sections[activeSection] || sections.intro;
     };
 
