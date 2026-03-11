@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, CheckCircle, ArrowRight, Search, HelpCircle, MessageSquare, Calendar, ChevronRight, X, Info, Award } from 'lucide-react';
+import { ExternalLink, CheckCircle, ArrowRight, Search, HelpCircle, MessageSquare, Calendar, ChevronRight, X, Info } from 'lucide-react';
 
 const Sections = ({ activeSection, isMobile }) => {
     const [selectedImage, setSelectedImage] = useState(null);
@@ -53,11 +53,11 @@ const Sections = ({ activeSection, isMobile }) => {
         <div className="mobile-section">
             <div className="mobile-container">
                 <h2 className="mobile-title small">INTEGRATED<br />TIMELINE</h2>
-                <p className="mobile-subtitle">연간 성공을 위한 정교한 로드맵</p>
+                <p className="mobile-subtitle">2027 수능 성공을 위한 유니온의 정교한 연간 로드맵입니다.</p>
 
                 <div className="mobile-timeline-cards">
                     <div className="timeline-card brand-r">
-                        <div className="brand-label">UNION R</div>
+                        <div className="brand-label" style={{ color: '#b794ff' }}>UNION R</div>
                         <div className="timeline-items">
                             <div className="t-item"><span>4.2</span> 시즌1 출시</div>
                             <div className="t-item"><span>6.23</span> 시즌2 출시</div>
@@ -66,7 +66,7 @@ const Sections = ({ activeSection, isMobile }) => {
                     </div>
 
                     <div className="timeline-card brand-x">
-                        <div className="brand-label">UNION X</div>
+                        <div className="brand-label" style={{ color: 'var(--accent-teal)' }}>UNION X</div>
                         <div className="timeline-items">
                             <div className="t-item"><span>8.11</span> 시즌1 출시</div>
                             <div className="t-item"><span>9.22</span> 시즌2 출시</div>
@@ -75,13 +75,57 @@ const Sections = ({ activeSection, isMobile }) => {
                     </div>
 
                     <div className="timeline-card brand-final">
-                        <div className="brand-label">평가원</div>
+                        <div className="brand-label" style={{ color: '#fff' }}>평가원</div>
                         <div className="timeline-items">
                             <div className="t-item"><span>6.4</span> 6월 모의평가</div>
                             <div className="t-item"><span>9.2</span> 9월 모의평가</div>
                             <div className="t-item primary"><span>11.19</span> 2027 수능</div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    );
+
+    const MobileGeneral = () => (
+        <div className="mobile-section">
+            <div className="mobile-container">
+                <h2 className="mobile-title small">일반 구매 안내</h2>
+                <p className="mobile-subtitle">멤버십 가입 없이 상시 구매 가능한 채널입니다.</p>
+
+                <div className="mobile-card-stack">
+                    <div className="info-card" style={{ padding: '1.5rem' }}>
+                        <h3 style={{ color: 'var(--accent-teal)', fontSize: '1.2rem', marginBottom: '0.8rem' }}>UNION R (Online)</h3>
+                        <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>전국 온/오프라인 서점 및 스마트스토어에서 즉시 구매 가능합니다.</p>
+                        <a href="https://smartstore.naver.com/csm17" target="_blank" rel="noreferrer" className="m-btn m-btn-primary" style={{ fontSize: '0.9rem' }}>스토어 바로가기 <ExternalLink size={16} /></a>
+                    </div>
+                    <div className="info-card" style={{ padding: '1.5rem', border: '1px solid var(--border-glass)' }}>
+                        <h3 style={{ color: 'var(--text-primary)', fontSize: '1.2rem', marginBottom: '0.8rem' }}>UNION X (Academy)</h3>
+                        <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>학원 전용 라인으로 카카오 채널을 통해 주문 가능합니다.</p>
+                        <a href="https://pf.kakao.com/_pqQCn" target="_blank" rel="noreferrer" className="m-btn m-btn-secondary" style={{ fontSize: '0.9rem' }}>카카오 채널 문의 <MessageSquare size={16} /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+
+    const MobileFAQ = () => (
+        <div className="mobile-section">
+            <div className="mobile-container">
+                <h2 className="mobile-title small">FAQ</h2>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                    {[
+                        { q: 'Plan R/X 주문창이 통합되어 있나요?', a: '네, Order Center를 통해 통합 주문이 가능하지만 상품 성격에 따라 배송 공정이 다를 수 있습니다.' },
+                        { q: '주문번호 조회가 되지 않습니다.', a: '카카오 채널을 통해 발급받으신 정식 주문번호(예: UNR-2027-XXXX)가 맞는지 확인해 주세요.' },
+                        { q: '멤버십 결제 후 바로 할인이 적용되나요?', a: '승인 완료 직후부터 멤버십 할인가가 적용된 전용 주문 링크를 이용하실 수 있습니다.' }
+                    ].map((faq, idx) => (
+                        <div key={idx} className="info-card" style={{ padding: '1.2rem' }}>
+                            <h4 style={{ fontSize: '1rem', color: '#fff', marginBottom: '0.8rem', display: 'flex', gap: '8px' }}>
+                                <HelpCircle size={18} color="var(--accent-teal)" /> {faq.q}
+                            </h4>
+                            <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', lineHeight: '1.6' }}>{faq.a}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
@@ -139,7 +183,7 @@ const Sections = ({ activeSection, isMobile }) => {
         </div>
     );
 
-    // --- Desktop Context (Moved from original) ---
+    // --- Desktop Context ---
     const DesktopContent = () => {
         const introContent = (
             <section className="section">
@@ -193,13 +237,43 @@ const Sections = ({ activeSection, isMobile }) => {
                     <div className="container">
                         <h2 className="section-title">INTEGRATED TIMELINE</h2>
                         <div className="info-card" style={{ padding: '3rem' }}>
-                            {/* Desktop Timeline Table - Reuse from original */}
-                            <div style={{ display: 'grid', gridTemplateColumns: '120px repeat(8, 1fr)', gap: '1rem' }}>
+                            <div style={{ display: 'grid', gridTemplateColumns: '120px repeat(8, 1fr)', borderBottom: '1px solid var(--border-glass)', paddingBottom: '1rem', marginBottom: '2rem' }}>
                                 <div></div>
-                                {['4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月'].map(m => <div key={m} style={{ textAlign: 'center', fontWeight: 800, opacity: 0.5 }}>{m}</div>)}
-                                {/* Existing content logic here... kept simplified for brevity but functionally identical */}
+                                {['4', '5', '6', '7', '8', '9', '10', '11'].map(m => <div key={m} style={{ textAlign: 'center', fontWeight: 800, opacity: 0.5 }}>{m}월</div>)}
                             </div>
-                            <p className="text-center mt-5 color-muted">상기 일정은 생산 일정에 따라 소폭 변동될 수 있습니다.</p>
+                            
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
+                                <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr', alignItems: 'center' }}>
+                                    <div style={{ color: '#b794ff', fontWeight: 950, fontSize: '1.1rem' }}>UNION R</div>
+                                    <div style={{ position: 'relative', height: '60px', background: 'rgba(124, 77, 255, 0.05)', borderRadius: '12px', display: 'flex', alignItems: 'center' }}>
+                                        <div style={{ position: 'absolute', left: '2%', background: '#7c4dff', padding: '4px 15px', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 900 }}>4.2 S1</div>
+                                        <div style={{ position: 'absolute', left: '30%', background: '#7c4dff', padding: '4px 15px', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 900 }}>6.23 S2</div>
+                                        <div style={{ position: 'absolute', left: '68%', background: '#7c4dff', padding: '4px 15px', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 900 }}>9.28 S3</div>
+                                        <div style={{ position: 'absolute', left: '0', width: '100%', height: '2px', background: 'linear-gradient(90deg, #7c4dff, transparent)', zIndex: -1 }}></div>
+                                    </div>
+                                </div>
+
+                                <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr', alignItems: 'center' }}>
+                                    <div style={{ color: 'var(--accent-teal)', fontWeight: 950, fontSize: '1.1rem' }}>UNION X</div>
+                                    <div style={{ position: 'relative', height: '60px', background: 'rgba(0, 242, 254, 0.05)', borderRadius: '12px', display: 'flex', alignItems: 'center' }}>
+                                        <div style={{ position: 'absolute', left: '55%', background: 'var(--accent-teal)', color: '#000', padding: '4px 15px', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 900 }}>8.11 S1</div>
+                                        <div style={{ position: 'absolute', left: '66%', background: 'var(--accent-teal)', color: '#000', padding: '4px 15px', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 900 }}>9.22 S2</div>
+                                        <div style={{ position: 'absolute', left: '78%', background: 'var(--accent-teal)', color: '#000', padding: '4px 15px', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 900 }}>10.13 S3</div>
+                                        <div style={{ position: 'absolute', left: '0', width: '100%', height: '2px', background: 'linear-gradient(90deg, transparent, var(--accent-teal), transparent)', zIndex: -1 }}></div>
+                                    </div>
+                                </div>
+
+                                <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr', alignItems: 'center' }}>
+                                    <div style={{ color: '#fff', fontWeight: 950, fontSize: '1.1rem' }}>평가원</div>
+                                    <div style={{ position: 'relative', height: '60px', background: 'rgba(255, 255, 255, 0.03)', borderRadius: '12px', display: 'flex', alignItems: 'center' }}>
+                                        <div style={{ position: 'absolute', left: '28%', border: '1px solid #fff', padding: '4px 15px', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 800 }}>6.4 6평</div>
+                                        <div style={{ position: 'absolute', left: '60%', border: '1px solid #fff', padding: '4px 15px', borderRadius: '50px', fontSize: '0.8rem', fontWeight: 800 }}>9.2 9평</div>
+                                        <div style={{ position: 'absolute', left: '86%', background: 'var(--accent-teal)', color: '#000', padding: '6px 20px', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 950, boxShadow: '0 0 20px rgba(0, 242, 254, 0.3)' }}>11.19 수능</div>
+                                        <div style={{ position: 'absolute', left: '0', width: '100%', height: '1px', background: 'dashed rgba(255,255,255,0.1)', zIndex: -1 }}></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p style={{ textAlign: 'center', marginTop: '3rem', fontSize: '0.9rem', color: 'var(--text-muted)' }}>상기 일정은 생산 일정에 따라 소폭 변동될 수 있습니다.</p>
                         </div>
                     </div>
                 </section>
@@ -247,33 +321,59 @@ const Sections = ({ activeSection, isMobile }) => {
             ),
             faq: (
                 <section className="section">
-                    <div className="container text-center">
-                        <h2 className="section-title">FAQ / SUPPORT</h2>
-                        <p className="section-subtitle">무엇이든 물어보세요</p>
-                        <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center', gap: '1.5rem' }}>
-                            <a href="https://pf.kakao.com/_pqQCn" target="_blank" rel="noreferrer" className="nav-item active" style={{ width: 'auto', padding: '1rem 2.5rem' }}>
-                                카카오 채널 문의하기 <MessageSquare size={20} />
-                            </a>
+                    <div className="container">
+                        <h2 className="section-title">FAQ</h2>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                            {[
+                                { q: 'Plan R/X 주문창이 통합되어 있나요?', a: '네, Order Center를 통해 통합 주문이 가능하지만 상품 성격에 따라 배송 공정이 다를 수 있습니다.' },
+                                { q: '주문번호 조회가 되지 않습니다.', a: '카카오 채널을 통해 발급받으신 정식 주문번호(예: UNR-2027-XXXX)가 맞는지 확인해 주세요. 발급 직후에는 반영까지 최대 30분 정도 소요될 수 있습니다.' },
+                                { q: '멤버십 결제 후 바로 할인이 적용되나요?', a: '승인 완료 직후부터 멤버십 할인가가 적용된 전용 주문 링크를 이용하실 수 있습니다.' }
+                            ].map((faq, idx) => (
+                                <div key={idx} className="info-card">
+                                    <h4 style={{ fontSize: '1.2rem', color: '#fff', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                        <HelpCircle size={20} color="var(--accent-teal)" /> {faq.q}
+                                    </h4>
+                                    <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: '1.7' }}>{faq.a}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>
             ),
-            general: introContent // 일반 구매도 소개 페이지와 동일한 구성을 사용하도록 복구
+            general: (
+                <section className="section">
+                    <div className="container">
+                        <h2 className="section-title">일반 구매 안내</h2>
+                        <p className="section-subtitle">멤버십 가입 없이 상시 구매 가능한 채널입니다.</p>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem' }}>
+                            <div className="info-card">
+                                <h3 style={{ color: 'var(--accent-teal)', marginBottom: '1rem' }}>UNION R (Online)</h3>
+                                <p style={{ marginBottom: '2rem', color: 'var(--text-secondary)' }}>전국 온/오프라인 서점 및 네이버 스마트스토어에서 즉시 구매가 가능합니다.</p>
+                                <a href="https://smartstore.naver.com/csm17" target="_blank" rel="noreferrer" className="nav-item active" style={{ justifyContent: 'center' }}>스토어 바로가기 <ExternalLink size={18} /></a>
+                            </div>
+                            <div className="info-card">
+                                <h3 style={{ color: 'var(--text-primary)', marginBottom: '1rem' }}>UNION X (Academy)</h3>
+                                <p style={{ marginBottom: '2rem', color: 'var(--text-secondary)' }}>학원 전용 라인으로 카카오 채널을 통해 주문 및 상담이 가능합니다.</p>
+                                <a href="https://pf.kakao.com/_pqQCn" target="_blank" rel="noreferrer" className="nav-item" style={{ border: '1px solid var(--border-glass)', justifyContent: 'center' }}>카카오 채널 문의 <MessageSquare size={18} /></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )
         };
-        // fallback logic for other system pages
+        
         if (activeSection === 'check' || activeSection === 'kakao') return sections.faq;
-
         return sections[activeSection] || sections.intro;
     };
 
     const MobileDispatcher = () => {
         switch (activeSection) {
-            case 'intro': 
-            case 'general': return <MobileIntro />;
+            case 'intro': return <MobileIntro />;
+            case 'general': return <MobileGeneral />;
             case 'schedule': return <MobileSchedule />;
             case 'membership': return <MobileMembership />;
             case 'order': return <MobileOrder />;
-            case 'check': case 'faq': case 'kakao': return <MobileOrder />; // Simplified for mobile focus
+            case 'faq': case 'check': case 'kakao': return <MobileFAQ />;
             default: return <MobileIntro />;
         }
     };
@@ -282,7 +382,6 @@ const Sections = ({ activeSection, isMobile }) => {
         <>
             {isMobile ? <MobileDispatcher /> : <DesktopContent />}
 
-            {/* Premium Zoom Modal (Shared) */}
             {selectedImage && (
                 <div className="modal-overlay luxury-modal" onClick={() => setSelectedImage(null)}>
                     <div className="modal-content" onClick={e => e.stopPropagation()}>
