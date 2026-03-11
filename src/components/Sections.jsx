@@ -141,51 +141,53 @@ const Sections = ({ activeSection, isMobile }) => {
 
     // --- Desktop Context (Moved from original) ---
     const DesktopContent = () => {
-        const sections = {
-            intro: (
-                <section className="section">
-                    <div className="container">
-                        <span className="saving-badge">2027 수능 수학의 압도적 정답</span>
-                        <h1 className="section-title">
-                            2027 수능 수학 <br />
-                            <span style={{ color: 'var(--accent-teal)' }}>UNION SERIES</span>
-                        </h1>
-                        <p className="section-subtitle">
-                            평가원의 출제 알고리즘을 완벽히 재현한 유니온 시리즈.
-                        </p>
+        const introContent = (
+            <section className="section">
+                <div className="container">
+                    <span className="saving-badge">2027 수능 수학의 압도적 정답</span>
+                    <h1 className="section-title">
+                        2027 수능 수학 <br />
+                        <span style={{ color: 'var(--accent-teal)' }}>UNION SERIES</span>
+                    </h1>
+                    <p className="section-subtitle">
+                        평가원의 출제 알고리즘을 완벽히 재현한 유니온 시리즈.
+                    </p>
 
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
-                            <div className="info-card" onClick={() => setSelectedImage('/images/2027학년도 UNION 모의고사 팜플렛_F_2.jpg')}>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '1.5rem' }}>
-                                    <h2 style={{ fontSize: '1.8rem', fontWeight: 900, color: '#fff', margin: 0 }}>UNION R</h2>
-                                    <span style={{ background: '#7c4dff', padding: '4px 12px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 800 }}>ONLINE</span>
-                                </div>
-                                <div style={{ position: 'relative' }}>
-                                    <img src="/images/2027학년도 UNION 모의고사 팜플렛_F_2.jpg" alt="UNION R" style={{ width: '100%', borderRadius: '12px' }} />
-                                    <div className="zoom-hint">클릭하여 확대 <Search size={16} /></div>
-                                </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
+                        <div className="info-card" onClick={() => setSelectedImage('/images/2027학년도 UNION 모의고사 팜플렛_F_2.jpg')}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '1.5rem' }}>
+                                <h2 style={{ fontSize: '1.8rem', fontWeight: 900, color: '#fff', margin: 0 }}>UNION R</h2>
+                                <span style={{ background: '#7c4dff', padding: '4px 12px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 800 }}>ONLINE</span>
                             </div>
-
-                            <div className="info-card" onClick={() => setSelectedImage('/images/2027학년도 UNION 모의고사 팜플렛_F_4.jpg')}>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '1.5rem' }}>
-                                    <h2 style={{ fontSize: '1.8rem', fontWeight: 900, color: '#fff', margin: 0 }}>UNION X</h2>
-                                    <span style={{ background: '#ff4d4d', padding: '4px 12px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 800 }}>ACADEMY</span>
-                                </div>
-                                <div style={{ position: 'relative' }}>
-                                    <img src="/images/2027학년도 UNION 모의고사 팜플렛_F_4.jpg" alt="UNION X" style={{ width: '100%', borderRadius: '12px' }} />
-                                    <div className="zoom-hint">클릭하여 확대 <Search size={16} /></div>
-                                </div>
+                            <div style={{ position: 'relative' }}>
+                                <img src="/images/2027학년도 UNION 모의고사 팜플렛_F_2.jpg" alt="UNION R" style={{ width: '100%', borderRadius: '12px' }} />
+                                <div className="zoom-hint">클릭하여 확대 <Search size={16} /></div>
                             </div>
                         </div>
 
-                        <div style={{ marginTop: '4rem', textAlign: 'center' }}>
-                            <a href="https://www.csmbooks.com/116" target="_blank" rel="noreferrer" className="nav-item active" style={{ display: 'inline-flex', width: 'auto', padding: '1rem 3rem', borderRadius: '50px' }}>
-                                [유니온 팜플렛 상세보기] <ExternalLink size={18} style={{ marginLeft: '10px' }} />
-                            </a>
+                        <div className="info-card" onClick={() => setSelectedImage('/images/2027학년도 UNION 모의고사 팜플렛_F_4.jpg')}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '1.5rem' }}>
+                                <h2 style={{ fontSize: '1.8rem', fontWeight: 900, color: '#fff', margin: 0 }}>UNION X</h2>
+                                <span style={{ background: '#ff4d4d', padding: '4px 12px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 800 }}>ACADEMY</span>
+                            </div>
+                            <div style={{ position: 'relative' }}>
+                                <img src="/images/2027학년도 UNION 모의고사 팜플렛_F_4.jpg" alt="UNION X" style={{ width: '100%', borderRadius: '12px' }} />
+                                <div className="zoom-hint">클릭하여 확대 <Search size={16} /></div>
+                            </div>
                         </div>
                     </div>
-                </section>
-            ),
+
+                    <div style={{ marginTop: '4rem', textAlign: 'center' }}>
+                        <a href="https://www.csmbooks.com/116" target="_blank" rel="noreferrer" className="nav-item active" style={{ display: 'inline-flex', width: 'auto', padding: '1rem 3rem', borderRadius: '50px' }}>
+                            [유니온 팜플렛 상세보기] <ExternalLink size={18} style={{ marginLeft: '10px' }} />
+                        </a>
+                    </div>
+                </div>
+            </section>
+        );
+
+        const sections = {
+            intro: introContent,
             schedule: (
                 <section className="section">
                     <div className="container">
@@ -256,7 +258,7 @@ const Sections = ({ activeSection, isMobile }) => {
                     </div>
                 </section>
             ),
-            general: sections.intro // 일반 구매도 소개 페이지와 동일한 구성을 사용하도록 복구
+            general: introContent // 일반 구매도 소개 페이지와 동일한 구성을 사용하도록 복구
         };
         // fallback logic for other system pages
         if (activeSection === 'check' || activeSection === 'kakao') return sections.faq;
