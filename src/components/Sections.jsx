@@ -144,9 +144,9 @@ const Sections = ({ activeSection, isMobile }) => {
                         <div className="m-type">Plan R</div>
                         <div className="m-price">연간 200,000원</div>
                         <div className="m-features">
-                            <div><CheckCircle size={16} /> <span>유니온 R 30% 상시 할인</span></div>
-                            <div><CheckCircle size={16} /> <span>전용 봉투 및 명단 등재</span></div>
-                            <div><CheckCircle size={16} /> <span>교사용 PDF/PPT 제공</span></div>
+                            <div><CheckCircle size={16} /> <span>유니온 R 전 시즌 30% 상시 할인</span></div>
+                            <div><CheckCircle size={16} /> <span>검토진 명단 등재 및 전용 봉투 증정</span></div>
+                            <div className="special"><CheckCircle size={16} /> <span>교사용 PDF, PPT 자료 제공</span></div>
                         </div>
                     </div>
 
@@ -154,10 +154,10 @@ const Sections = ({ activeSection, isMobile }) => {
                         <div className="m-type">Plan X</div>
                         <div className="m-price">연간 400,000원</div>
                         <div className="m-features">
-                            <div><CheckCircle size={16} /> <span>Plan R 혜택 포함</span></div>
-                            <div><CheckCircle size={16} /> <span>유니온 X 20% 상시 할인</span></div>
-                            <div><CheckCircle size={16} /> <span>X 교사용 PDF/PPT 제공</span></div>
-                            <div className="special"><CheckCircle size={16} /> <span>미공개 모의고사(1회) 추가</span></div>
+                            <div><CheckCircle size={16} /> <span>Plan R 모든 혜택 포함</span></div>
+                            <div><CheckCircle size={16} /> <span>유니온 X 20% 추가 상담 할인</span></div>
+                            <div><CheckCircle size={16} /> <span>HWP 원본 파일 추가 제공</span></div>
+                            <div className="special"><CheckCircle size={16} /> <span>학원 전용 고사지 관리 시스템</span></div>
                         </div>
                     </div>
                 </div>
@@ -288,8 +288,9 @@ const Sections = ({ activeSection, isMobile }) => {
                                 <h3>INDIVIDUAL</h3>
                                 <div className="price">200,000₩</div>
                                 <ul>
-                                    <li><CheckCircle /> UNION R 30% Discount</li>
-                                    <li><CheckCircle /> Dedicated Materials (PDF/PPT)</li>
+                                    <li><CheckCircle /> 유니온 R 전 시즌 30% 상시 할인</li>
+                                    <li><CheckCircle /> 검토진 명단 등재 및 전용 봉투 증정</li>
+                                    <li><CheckCircle /> <strong>추가 제공</strong>: 교사용 PDF, PPT 자료</li>
                                 </ul>
                             </div>
                             <div className="info-card premium-card active">
@@ -297,9 +298,10 @@ const Sections = ({ activeSection, isMobile }) => {
                                 <h3>ACADEMY</h3>
                                 <div className="price">400,000₩</div>
                                 <ul>
-                                    <li><CheckCircle /> Includes Plan R Benefits</li>
-                                    <li><CheckCircle /> UNION X 20% Discount</li>
-                                    <li><CheckCircle /> Special HWPs (Unreleased)</li>
+                                    <li><CheckCircle /> <strong>Plan R 모든 혜택 포함</strong></li>
+                                    <li><CheckCircle /> 유니온 X 20% 추가 상담 할인</li>
+                                    <li><CheckCircle /> <strong>HWP 원본 파일 추가 제공</strong></li>
+                                    <li><CheckCircle /> 학원 전용 고사지 관리 시스템 이용</li>
                                 </ul>
                             </div>
                         </div>
