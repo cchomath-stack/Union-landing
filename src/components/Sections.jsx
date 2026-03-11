@@ -28,7 +28,6 @@ const Sections = ({ activeSection, isMobile }) => {
                             <div className="zoom-hint-mobile"><Search size={14} /> 터치하여 크게 보기</div>
                         </div>
                     </div>
-
                     <div className="mobile-luxury-card" onClick={() => setSelectedImage('/images/2027학년도 UNION 모의고사 팜플렛_F_4.jpg')}>
                         <div className="card-header">
                             <h2 className="brand-name">UNION X</h2>
@@ -39,6 +38,12 @@ const Sections = ({ activeSection, isMobile }) => {
                             <div className="zoom-hint-mobile"><Search size={14} /> 터치하여 크게 보기</div>
                         </div>
                     </div>
+                </div>
+
+                <div className="mobile-action-buttons" style={{ marginTop: '2.5rem' }}>
+                    <a href="https://www.csmbooks.com/116" target="_blank" rel="noreferrer" className="m-btn m-btn-secondary" style={{ width: '100%', border: '1px solid var(--accent-teal)', color: 'var(--accent-teal)' }}>
+                        [유니온 팜플렛 상세보기] <ExternalLink size={16} />
+                    </a>
                 </div>
             </div>
         </div>
@@ -172,6 +177,12 @@ const Sections = ({ activeSection, isMobile }) => {
                                 </div>
                             </div>
                         </div>
+
+                        <div style={{ marginTop: '4rem', textAlign: 'center' }}>
+                            <a href="https://www.csmbooks.com/116" target="_blank" rel="noreferrer" className="nav-item active" style={{ display: 'inline-flex', width: 'auto', padding: '1rem 3rem', borderRadius: '50px' }}>
+                                [유니온 팜플렛 상세보기] <ExternalLink size={18} style={{ marginLeft: '10px' }} />
+                            </a>
+                        </div>
                     </div>
                 </section>
             ),
@@ -218,14 +229,45 @@ const Sections = ({ activeSection, isMobile }) => {
                         </div>
                     </div>
                 </section>
-            )
+            ),
+            order: (
+                <section className="section">
+                    <div className="container text-center">
+                        <h2 className="section-title">ORDER SYSTEM</h2>
+                        <p className="section-subtitle">멤버십 전용 통합 주문창</p>
+                        <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center', gap: '1.5rem' }}>
+                            <a href="https://union-ordercenter.vercel.app/membership" target="_blank" rel="noreferrer" className="nav-item active" style={{ width: 'auto', padding: '1rem 2.5rem' }}>
+                                바로 주문하기 <ArrowRight size={20} />
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            ),
+            faq: (
+                <section className="section">
+                    <div className="container text-center">
+                        <h2 className="section-title">FAQ / SUPPORT</h2>
+                        <p className="section-subtitle">무엇이든 물어보세요</p>
+                        <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center', gap: '1.5rem' }}>
+                            <a href="https://pf.kakao.com/_pqQCn" target="_blank" rel="noreferrer" className="nav-item active" style={{ width: 'auto', padding: '1rem 2.5rem' }}>
+                                카카오 채널 문의하기 <MessageSquare size={20} />
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            ),
+            general: sections.intro // 일반 구매도 소개 페이지와 동일한 구성을 사용하도록 복구
         };
+        // fallback logic for other system pages
+        if (activeSection === 'check' || activeSection === 'kakao') return sections.faq;
+
         return sections[activeSection] || sections.intro;
     };
 
     const MobileDispatcher = () => {
         switch (activeSection) {
-            case 'intro': return <MobileIntro />;
+            case 'intro': 
+            case 'general': return <MobileIntro />;
             case 'schedule': return <MobileSchedule />;
             case 'membership': return <MobileMembership />;
             case 'order': return <MobileOrder />;
